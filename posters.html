@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio - Daniel Casadevall Jauhiainen </title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <div id="modal" class="modal">
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+
+    <topbar> 
+        <h1 class="file_title"> DESIGN - DANIEL CASADEVALL JAUHIAINEN </h1>
+        <a class="top_button" onclick="redirect('about.html')"> ABOUT </a>
+        <a class="top_button"> DESIGN </a> 
+        <a class="top_button" onclick="redirect('ilustracions.html')"> ILUSTRATIONS </a> 
+    </topbar>
+
+    <div id="project_container" class="project_container"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var container = document.getElementById("project_container");
+
+            var jsonData = [
+                {
+                    "url": "Assets/projects/cartells/cartell_Batman.jpg",
+                    "title": "BATMAN POSTER",
+                    "subtitle": "Collage visual del batman"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Cucafarra.jpg",
+                    "title": "CUCAFARRA POSTER",
+                    "subtitle": "Diseny grafic del poster Cucafarra, Cucafarra '23"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Cucabarra.jpg",
+                    "title": "CUCABARRA POSTER",
+                    "subtitle": "Disseny preus per a la festa Cucafarra, Cucafarra '23"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Cucabarra2.jpg",
+                    "title": "CUCABARRA POSTER II",
+                    "subtitle": "Disseny preus per a la festa Cucafarra, Cucafarra '23"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Industrials.jpg",
+                    "title": "CARTELL FESTA INDUSTRIALS",
+                    "subtitle": "Diseny grafic del poster per a la festa d'Industrials"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Jocs.jpg",
+                    "title": "JOCS DE TAULA POSTER",
+                    "subtitle": "Disseny grafic del poster jocs de taula, Cucafarra '24"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Rosa.jpg",
+                    "title": "ROSA QUE ENAMORA",
+                    "subtitle": "Poster la rosa que enamora"
+                },
+                {
+                    "url": "Assets/projects/cartells/cartell_Santjordi.png",
+                    "title": "SANT JORDI",
+                    "subtitle": "Poster Sant Jordi '23"
+                }
+            ];
+        
+            jsonData.forEach(projectData => {
+                var projectDiv = document.createElement("project");
+                projectDiv.className = "project_image";
+                projectDiv.style.backgroundImage = "url('" + projectData.url + "')";
+        
+                projectDiv.addEventListener("click", function() {
+                    showBiggerImage(projectData.url);
+                });
+
+                var coverDiv = document.createElement("div");
+                coverDiv.className = "cover";
+                projectDiv.appendChild(coverDiv);
+        
+                var projectTextDiv = document.createElement("div");
+                projectTextDiv.className = "project_text";
+                projectDiv.appendChild(projectTextDiv);
+        
+                var projectTitle = document.createElement("h2");
+                projectTitle.className = "project_title";
+                projectTitle.textContent = projectData.title;
+                projectTextDiv.appendChild(projectTitle);
+        
+                var projectSubtitle = document.createElement("h5");
+                projectSubtitle.className = "project_subtitle";
+                projectSubtitle.textContent = projectData.subtitle;
+                projectTextDiv.appendChild(projectSubtitle);
+
+                container.appendChild(projectDiv);
+            });
+        });
+        function showBiggerImage(imageUrl) {
+            var modal = document.getElementById("modal");
+            var modalImage = document.getElementById("modalImage");
+            modalImage.src = imageUrl;
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+        
+        window.onclick = function(event) {
+          var modal = document.getElementById("modal");
+          var modalImage = document.getElementById("modalImage");
+          if (event.target === modal || event.target === modalImage) {
+            modal.style.display = "none";
+          }
+        };
+
+        function redirect(url){
+            window.location.href = url;
+        }
+    </script>
