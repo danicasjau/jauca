@@ -59,9 +59,13 @@
         text-transform: uppercase;
     }
 
-    .cube:hover .face {
-        opacity: 0.1;
+    .cube:hover{
+        transform: scale(5);
+        .face {
+            opacity: 0.1;
+        }
     }
+
     .cube2:hover .face {
         opacity: 0.1;
     }
@@ -93,6 +97,15 @@
         50% { transform: rotateY(0deg) rotateX(90deg); }
         100% { transform: rotateY(-360deg) rotateX(0deg); }
     }
+
+    @media screen and (max-width: 1000px) {
+        .cube3 {
+            display: none;
+        }
+        .cube {
+            display: none;
+        }
+    }
 </style>
 <body>
     <topbar> 
@@ -100,7 +113,7 @@
         <a class="active top_button" onclick="redirect('index.html')"> HOME </a>
         <a class="top_button" onclick="redirect('posters.html')"> DESIGN </a>
         <a class="top_button" onclick="redirect('ilustracions.html')"> ART </a>
-        <a class="top_button"  onclick="redirect('animacions.html')"> ANIMATIONS </a> 
+        <a class="top_button"  onclick="redirect('index.html')"> ANIMATIONS </a> 
     </topbar>
 
     <div class="center">
