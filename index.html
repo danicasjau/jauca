@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio - Daniel Casadevall Jauhiainen </title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<style>
+    body {
+      overflow: hidden;
+    }
+
+    .cube-container {
+        perspective: 800px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform: scale(1.2);
+    }
+
+    .cube {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: rotate 16s linear infinite;
+    }
+    .cube2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: rotate2 16s linear infinite;
+    }
+    .cube3 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: rotate3 16s linear infinite;
+    }
+
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 2px solid var(--color2);
+        background-color: var(--color5);
+        color: var(--color1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        transition: opacity 0.5s ease;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .cube:hover .face {
+        opacity: 0.1;
+    }
+    .cube2:hover .face {
+        opacity: 0.1;
+    }
+    .cube3:hover .face {
+        opacity: 0.1;
+    }
+
+    .front { transform: translateZ(100px); }
+    .back { transform: rotateY(180deg) translateZ(100px); }
+    .right { transform: rotateY(90deg) translateZ(100px); }
+    .left { transform: rotateY(-90deg) translateZ(100px); }
+    .top { transform: rotateX(-90deg) translateZ(-100px) scaleX(-1); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotate {
+        0% { transform: rotateY(0deg) rotateX(0deg); }
+        50% { transform: rotateY(360deg) rotateX(90deg); }
+        100% { transform: rotateY(720deg) rotateX(0deg); }
+    }
+    @keyframes rotate2 {
+        0% { transform: rotateY(90deg) rotateX(0deg); }
+        25% { transform: rotateY(0deg) rotateX(90deg); }
+        50% { transform: rotateY(-90deg) rotateX(0deg); }
+        75% { transform: rotateY(-180deg) rotateX(-90deg); }
+        100% { transform: rotateY(90deg) rotateX(0deg); }
+    }
+    @keyframes rotate3 {
+        0% { transform: rotateY(360deg) rotateX(0deg); }
+        50% { transform: rotateY(0deg) rotateX(90deg); }
+        100% { transform: rotateY(-360deg) rotateX(0deg); }
+    }
+</style>
+<body>
+    <topbar> 
+        <h1 class="file_title"> DANIEL CASADEVALL JAUHIAINEN </h1>
+        <a class="active top_button" onclick="redirect('index.html')"> HOME </a>
+        <a class="top_button" onclick="redirect('posters.html')"> DESIGN </a>
+        <a class="top_button" onclick="redirect('ilustracions.html')"> ART </a>
+        <a class="top_button"  onclick="redirect('index.html')"> ANIMATIONS </a> 
+    </topbar>
+
+    <div class="center">
+        <div class="cube-container">
+            <div class="cube">
+                <div class="face front"> Català </div>
+                <div class="face back"> Castellà </div>
+                <div class="face right"> Anglès </div>
+                <div class="face left"> Finès </div>
+                <div class="face top"> Dinàmic </div>
+                <div class="face bottom"> Programador </div>
+            </div>
+        </div>
+        <div class="cube-container">
+            <div class="cube2">
+                <div class="face front"> Animació <br> i VFX </div>
+                <div class="face back"> Daniel Casadevall Jauhiainen </div>
+                <div class="face right"> Enginyer Informatic </div>
+                <div class="face left"> Director <br> Creatiu </div>
+                <div class="face top"> @jaukart </div>
+                <div class="face bottom"> Facilitador </div>
+            </div>
+        </div>
+        <div class="cube-container">
+            <div class="cube3">
+                <div class="face front"> Modelador </div>
+                <div class="face back"> Animador </div>
+                <div class="face right"> Artista </div>
+                <div class="face left"> Dissenyador </div>
+                <div class="face top"> Creatiu </div>
+                <div class="face bottom"> Innovador </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about_text">
+
+    </div>
+
+    <div class="inferior">
+        <a class="bottom_button" onclick="redirect('https://www.instagram.com/jaukart?igsh=Y3N6M3Z5Y2VlbnY1')"> INSTAGRAM </a>
+        <a class="bottom_button"> GMAIL </a>
+    </div>
+    
+    <script>
+        function redirect(url){
+            window.location.href = url;
+        }
+    </script>
