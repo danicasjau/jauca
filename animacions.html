@@ -23,7 +23,7 @@
     
             var jsonData = [
                 {
-                    "url": "https://drive.google.com/file/d/1RANUg98EK2GYJO_Td00OJfi-pqLWNr3a/view?usp=sharing",
+                    "url": "https://youtu.be/a_uGpsuiyF0",
                     "title": "CLONE LEGO",
                     "subtitle": "Star Wars lego model maya render"
                 }
@@ -31,14 +31,14 @@
         
             jsonData.forEach(projectData => {
                 var projectDiv = document.createElement("div");
-                projectDiv.className = "project_video"; // Change class name to reflect video content
-                var videoElement = document.createElement("video"); // Create video element
-                videoElement.src = projectData.url; // Set video source
-                videoElement.controls = true; // Enable controls for video playback
-                projectDiv.appendChild(videoElement); // Append video element to project div
+                projectDiv.className = "project_video";
+                var videoElement = document.createElement("video");
+                videoElement.src = projectData.url;
+                videoElement.controls = true; 
+                projectDiv.appendChild(videoElement);
         
                 projectDiv.addEventListener("click", function() {
-                    showBiggerVideo(projectData.url); // Change function name to reflect video content
+                    showBiggerVideo(projectData.url);
                 });
     
                 var projectTextDiv = document.createElement("div");
