@@ -15,70 +15,13 @@
         <a class="top_button active"  onclick="redirect('animacions.html')"> ANIMATIONS </a> 
     </topbar>
 
-    <div id="project_container" class="project_video_container"></div>
+    <div class="project_video_container">
+        <div class="video_container">
+            <iframe class="video" src="https://www.youtube.com/embed/a_uGpsuiyF0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var container = document.getElementById("project_container");
-    
-            var jsonData = [
-                {
-                    "url": "https://youtu.be/a_uGpsuiyF0",
-                    "title": "CLONE LEGO",
-                    "subtitle": "Star Wars lego model maya render"
-                }
-            ];
-        
-            jsonData.forEach(projectData => {
-                var projectDiv = document.createElement("div");
-                projectDiv.className = "project_video";
-                var videoElement = document.createElement("video");
-                videoElement.src = projectData.url;
-                videoElement.controls = true; 
-                projectDiv.appendChild(videoElement);
-        
-                projectDiv.addEventListener("click", function() {
-                    showBiggerVideo(projectData.url);
-                });
-    
-                var projectTextDiv = document.createElement("div");
-                projectTextDiv.className = "project_text";
-                projectDiv.appendChild(projectTextDiv);
-        
-                var projectTitle = document.createElement("h2");
-                projectTitle.className = "project_title";
-                projectTitle.textContent = projectData.title;
-                projectTextDiv.appendChild(projectTitle);
-        
-                var projectSubtitle = document.createElement("h5");
-                projectSubtitle.className = "project_subtitle";
-                projectSubtitle.textContent = projectData.subtitle;
-                projectTextDiv.appendChild(projectSubtitle);
-    
-                container.appendChild(projectDiv);
-            });
-        });
-    
-        function showBiggerVideo(videoUrl) {
-            var modal = document.getElementById("modal");
-            var modalVideo = document.getElementById("modalVideo");
-            modalVideo.src = videoUrl;
-            if (modal.style.display === "block") {
-                modal.style.display = "none";
-            } else {
-                modal.style.display = "block";
-            }
-        }
-        
-        window.onclick = function(event) {
-            var modal = document.getElementById("modal");
-            var modalVideo = document.getElementById("modalVideo");
-            if (event.target === modal || event.target === modalVideo) {
-                modal.style.display = "none";
-                modalVideo.pause(); // Pause video when modal is closed
-            }
-        };
-    
         function redirect(url){
             window.location.href = url;
         }
