@@ -13,14 +13,14 @@
 
     <topbar> 
         <h1 class="file_title"> DANIEL CASADEVALL JAUHIAINEN </h1>
-        <a class="top_button" onclick="redirect('index.html')"> HOME </a>
-        <a class="top_button" onclick="redirect('posters.html')"> DESIGN </a>
-        <a class="top_button active" onclick="redirect('ilustracions.html')"> ART </a>
-        <a class="top_button"  onclick="redirect('animacions.html')"> ANIMATIONS </a>
-        <a class="top_button"  onclick="redirect('download.html')"> DOWNLOAD </a> 
+        <a class="top_button"> portafoli </a>
     </topbar>
 
     <div id="project_container" class="project_container"></div>
+
+    <bottombar>
+        <h1 class="small_text"> &copy; 2024 Daniel Casadevall. All Rights Reserved. <br> dani.casadevall@gmail.com  </h1>
+    </bottombar>
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -28,73 +28,124 @@
 
             var jsonData = [
                 {
-                    "url": "Assets/projects/ilustracions/ilus_Lego01.jpg",
-                    "title": "CLONE LEGO",
-                    "subtitle": "Star Wars lego model maya render"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_Lego02.jpg",
-                    "title": "CLONE LEGO II",
-                    "subtitle": "Star Wars lego model maya render"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_Lego03.jpg",
-                    "title": "CLONE LEGO III",
-                    "subtitle": "Star Wars lego model maya render"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_Lego04.jpg",
-                    "title": "CLONE LEGO IV",
-                    "subtitle": "Star Wars lego model maya render, with Beatles"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_Ministra.jpg",
-                    "title": "RED PRESIDENT",
-                    "subtitle": "Red president ilustration"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_heihei.jpg",
-                    "title": "HEI HEI",
-                    "subtitle": "3d maya model of moana character Hei Hei"
-                },                {
-                    "url": "Assets/projects/ilustracions/ilus_heihei2.jpg",
-                    "title": "HEI HEI",
-                    "subtitle": "3d maya model of moana character Hei Hei"
-                },
-                {
                     "url": "Assets/projects/ilustracions/ilus_Bimbo.png",
                     "title": "PA BIMBO",
-                    "subtitle": "Un pa bimbo amb vida content"
+                    "subtitle": "Il·lustració prova de color pel projecte dels pans"
                 },
                 {
-                    "url": "Assets/projects/ilustracions/ilus_Llibre.jpg",
-                    "title": "EL LECTOR",
-                    "subtitle": "Ilustració d'un lector molt ocupat"
+                    "url": "Assets/projects/ilustracions/ilus_Project4.jpg",
+                    "title": "THE MOON",
+                    "subtitle": "Shot final del tràiler Misteri Oval"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_grimmJar.jpg",
+                    "title": "GRIMM's JARS",
+                    "subtitle": "Shot final del tràiler Grimm"
                 },
                 {
                     "url": "Assets/projects/ilustracions/ilus_Nenlector.jpg",
                     "title": "NEN LECTOR",
-                    "subtitle": "Nen lector inspirat"
-                },   
+                    "subtitle": "Il·lustració per presentar idea de curtmetratge"
+                }, 
+                {
+                    "url": "Assets/projects/ilustracions/ilus_heihei.jpg",
+                    "title": "HEI HEI",
+                    "subtitle": "3D model del personatge Hei Hei"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_heihei2.jpg",
+                    "title": "HEI HEI",
+                    "subtitle": "3D model del personatge Hei Hei"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_Lego01.jpg",
+                    "title": "LEGO STAR WARS",
+                    "subtitle": "Shot amb el 3D model de lego"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_Lego04.jpg",
+                    "title": "LEGO STAR WARS",
+                    "subtitle": "Shot amb el 3D model de lego"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_Llibre.jpg",
+                    "title": "EL LECTOR",
+                    "subtitle": "Il·lustració per presentar idea de curtmetratge"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_Lluna.jpg",
+                    "title": "SOL I LLUNA",
+                    "subtitle": "Il·lustració per presentar idea de curtmetratge"
+                },
                 {
                     "url": "Assets/projects/ilustracions/ilus_grimm.jpg",
-                    "title": "TENDA",
-                    "subtitle": "3d render de la tenda"
+                    "title": "TENDA GRIMM",
+                    "subtitle": "Il·lustració per presentar idea de curtmetratge"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/dibu_rocio2.jpg",
+                    "title": "DIBUIX I",
+                    "subtitle": "Dibuix classe tècnica humida, 10 min"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/dibu_rocio3.jpg",
+                    "title": "DIBUIX II",
+                    "subtitle": "Dibuix classe tècnica humida, 3 min cada un"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/dibu_rocio1.jpg",
+                    "title": "DIBUIX III",
+                    "subtitle": "Dibuix classe tècnica humida, 10 min"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Batman.jpg",
+                    "title": "BATMAN",
+                    "subtitle": "Exercici composició uni"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Cucabarra.jpg",
+                    "title": "CARTELL CUCABARRA",
+                    "subtitle": "Projecte Cucafarra 2023"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Cucafarra.jpg",
+                    "title": "CARTELL CUCAFARRA",
+                    "subtitle": "Projecte Cucafarra 2023"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Industrials.jpg",
+                    "title": "FESTA d'INDUSTRIALS",
+                    "subtitle": "Cartell de la festa d'industrials"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Jocs.jpg",
+                    "title": "JOCS DE TAULA",
+                    "subtitle": "Projecte Cucafarra 2024"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Rosa.jpg",
+                    "title": "LA ROSA QUE ENAMORA",
+                    "subtitle": "Cartell promocional sant Jordi 2024"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/cartell_Santjordi.jpg",
+                    "title": "SANT JORDI",
+                    "subtitle": "Cartell promocional sant Jordi 2023"
+                },
+                {
+                    "url": "Assets/projects/ilustracions/ilus_Zombie.jpg",
+                    "title": "ZOMBIE",
+                    "subtitle": "blender 3D"
                 },
                 {
                     "url": "Assets/projects/ilustracions/ilus_Casa.jpg",
-                    "title": "CASA SOLA",
-                    "subtitle": "Blender 3D render d'una casa solitaria, '21"
+                    "title": "LA CASA",
+                    "subtitle": "blender 3D"
                 },
                 {
                     "url": "Assets/projects/ilustracions/ilus_Earth.png",
-                    "title": "EARTH",
-                    "subtitle": "Blender 3D render del planeta terra, '21"
-                },
-                {
-                    "url": "Assets/projects/ilustracions/ilus_Zombie.png",
-                    "title": "LA PORTA",
-                    "subtitle": "Blender 3D render d'una porta, '21"
+                    "title": "LA TERRA",
+                    "subtitle": "blender 3D"
                 }
             ];
         
