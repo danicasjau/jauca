@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: #e0e0e0;
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    padding-top: 60px;
+    /* Space for topbar */
+}
+
+/* Elegant Top Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    /* Very tight on mobile to fit 5 items */
+    padding: 15px 0;
+    background: rgba(5, 5, 5, 0.90);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #666;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 9px;
+    /* Small enough for 5 items */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    /* Reduced tracking for space */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 4px;
+    /* Narrow padding */
+}
+
+nav button:hover,
+nav button.active {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+nav button.active {
+    border-bottom: 1px solid white;
+}
+
+/* Sections */
+section {
+    display: none;
+    padding: 40px 20px 80px;
+    /* Adjusted padding for mobile */
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section.active {
+    display: block;
+}
+
+/* Hero / Header */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.5rem;
+    /* Mobile first size */
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.hero h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #aaa;
+}
+
+/* 1 Column Grid (Brutalist & Mobile) */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.card {
+    border: 1px solid #222;
+    background: #080808;
+    position: relative;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(10%) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.card:hover img {
+    filter: grayscale(0%) contrast(1.0);
+}
+
+.card span {
+    display: block;
+    padding: 12px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+/* Projects Panel */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+    text-decoration: none;
+    /* Removed link underline */
+    color: inherit;
+    /* Maintain text color */
+    cursor: pointer;
+}
+
+.project-card:last-child {
+    border-bottom: none;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(10%);
+    margin-bottom: 20px;
+    transition: filter 0.4s;
+}
+
+.project-card:hover img {
+    filter: grayscale(0%);
+}
+
+.project-info h3 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.project-info p {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* Updated Contact Box - Brutalist Standard */
+.contact-box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 10px;
+    /* Less side padding on mobile */
+    text-align: center;
+    background: #0a0a0a;
+    position: relative;
+}
+
+.contact-box p {
+    margin: 20px 0;
+    font-family: 'Space Mono', monospace;
+    /* Brutalist Standard */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+}
+
+.contact-box a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2px;
+    transition: all 0.4s ease;
+}
+
+.contact-box a:hover {
+    border-bottom-color: #fff;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Future Section & Animation - Clean Text Only */
+#future .hero {
+    margin-bottom: 0;
+    /* Center it vertically if needed, but simple is better */
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.future-container {
+    display: flex;
+    /* Centering */
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+.future-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    /* Readable on mobile */
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: normal;
+    /* Allow wrapping on mobile */
+    border-right: 2px solid #fff;
+    animation: blink 0.75s step-end infinite;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Typewriter effect simulates via JS or restricted css. 
+   Simple blink cursor is safer for responsive wrapping text */
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #fff;
+    }
+}
+
+/* Responsive Finetuning */
+@media (min-width: 768px) {
+    nav {
+        gap: 40px;
+    }
+
+    nav button {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Project layout desktop tweak if wanted, but user asked for list alike */
+}
